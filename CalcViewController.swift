@@ -128,10 +128,6 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
         notesTextView.inputAccessoryView = toolbar
         phoneTextField.inputAccessoryView = toolbar
         
-        bannerView72.adUnitID = "ca-app-pub-6858386641984473/4087146349"
-        bannerView72.rootViewController = self
-        bannerView72.load(GADRequest())
-        
         if (oType == 2) {
             phoneTextField.alpha = 1.0
             phoneLabel.alpha = 1.0
