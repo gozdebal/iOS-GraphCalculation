@@ -155,7 +155,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
         view.endEditing(true)
     }
     
-    /*func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
@@ -170,7 +170,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         locationTextField.text = locationArray[row]
         //self.view.endEditing(false)
-    }*/
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
@@ -451,11 +451,9 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBAction func orderAction(_ sender: Any) {
         
-        //I'm at the Store - Geo location Check
-        
 
         //I'm not in the Store - Check
-        /*ref.child("SavedMeal").queryOrdered(byChild: "OrderCompanyID").queryEqual(toValue: selectedCompany).observe(.childAdded, with: {(snapshot) in
+        ref.child("SavedMeal").queryOrdered(byChild: "OrderCompanyID").queryEqual(toValue: selectedCompany).observe(.childAdded, with: {(snapshot) in
             
             if let dictionary1 = snapshot.value as? [String:AnyObject] {
                 let smeal = SavedMeal ()
@@ -483,7 +481,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
                 })
             }
         })
-        */
+        
         
         let date =  Date().toString()
         let orderId = arc4random()
@@ -600,7 +598,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
         
         })
         
-        /*if MFMailComposeViewController.canSendMail() {
+        if MFMailComposeViewController.canSendMail() {
             let mailComposerVC = MFMailComposeViewController()
             mailComposerVC.mailComposeDelegate = self
             mailComposerVC.setToRecipients([userEmail!,companyEmail!])
@@ -608,7 +606,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
             mailComposerVC.setMessageBody("Setting up a body message!", isHTML: false)
             
             self.present(mailComposerVC, animated: true, completion: {() -> Void in })
-        }*/
+        }
         orderButton.isEnabled = false
         displayMyAlertMessage(userMessage: "Order is sent.");
     }
@@ -668,7 +666,7 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
 }
 
 
-/*func configuredMailComposeViewController() -> MFMailComposeViewController {
+func configuredMailComposeViewController() -> MFMailComposeViewController {
  
  let mailComposerVC = MFMailComposeViewController()
  mailComposerVC.mailComposeDelegate = self
@@ -683,4 +681,4 @@ class MealCalculatorViewController: UIViewController, UITableViewDataSource, UIT
  func showSendMailErrorAlert() {
  let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
  sendMailErrorAlert.show()
- }*/
+ }
